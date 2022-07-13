@@ -1,0 +1,15 @@
+Vicidial 10 installation:
+
+yast lan
+
+yast firewall
+
+vicibox-express
+
+support: repair command
+
+mysqlcheck -ucron -p1234 --check --all-databases
+
+mysqlcheck -ucron -p1234 --auto-repair --all-databases
+
+mysqlcheck -ucron -p1234 --optimize --all-databases
