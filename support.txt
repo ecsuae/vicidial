@@ -13,3 +13,11 @@ mysqlcheck -ucron -p1234 --check --all-databases
 mysqlcheck -ucron -p1234 --auto-repair --all-databases
 
 mysqlcheck -ucron -p1234 --optimize --all-databases
+
+DELETE FROM vicidial_auto_calls where channel IS NULL
+
+service asterisk restart
+
+service mysql restart
+
+ci-box:/var/log/mysql # cat mysqld.log-20131022 | grep ERROR
