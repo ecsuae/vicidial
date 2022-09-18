@@ -21,3 +21,10 @@ service asterisk restart
 service mysql restart
 
 ci-box:/var/log/mysql # cat mysqld.log-20131022 | grep ERROR
+
+/usr/share/astguiclient/AST_flush_DBqueue.pl --seconds=240 --session-flush -q
+
+
+mysqlcheck -u root -p --auto-repair --optimize --all-database
+
+rm -rf ./var/lib/mysql/asterisk/vicidial_live_agents.TMM
